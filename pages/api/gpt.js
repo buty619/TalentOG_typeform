@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     console.log('[GPT]:', data);
     res.status(200).json({ reply: data.choices?.[0]?.message?.content || '' });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch from OpenAI API' });
+    res.status(500).json({ error });
   }
 }
 
