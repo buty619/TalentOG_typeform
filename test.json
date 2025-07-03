@@ -1,0 +1,1125 @@
+{
+  "items": [
+    {
+      "landing_id": "0ah376x71gb1232lq73i9c0ah37e5vgl",
+      "token": "0ah376x71gb1232lq73i9c0ah37e5vgl",
+      "response_id": "0ah376x71gb1232lq73i9c0ah37e5vgl",
+      "response_type": "completed",
+      "landed_at": "2024-06-20T17:57:04Z",
+      "submitted_at": "2024-06-20T18:03:20Z",
+      "metadata": {
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+        "platform": "other",
+        "referer": "https://form.typeform.com/to/f9grXrMz",
+        "network_id": "b5134475c5",
+        "browser": "default"
+      },
+      "hidden": {},
+      "calculated": {
+        "score": 0
+      },
+      "answers": [
+        {
+          "field": {
+            "id": "k375htR8NdmB",
+            "type": "short_text",
+            "ref": "01HWX0FPD2MGR0R7WG7BHF0HG1"
+          },
+          "type": "text",
+          "text": "Vishal Acharya"
+        },
+        {
+          "field": {
+            "id": "o6juWSUYIUg0",
+            "type": "multiple_choice",
+            "ref": "be8fbb25-1cd4-463d-b4e8-97bf0cdac88f"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "AJgk0dDlrkka",
+            "ref": "5fbc1e22-6938-4edc-9761-42bb6c585e6d",
+            "label": "I am his/her Peer"
+          }
+        },
+        {
+          "field": {
+            "id": "BbGYAqop1kT7",
+            "type": "multiple_choice",
+            "ref": "f9e65013-788b-4515-838f-79ee2552b933"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "xK5IqdTJO6ol",
+            "ref": "69a4526a-0c0c-433f-8926-b53907e8700a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "xRNoTybArDFY",
+            "type": "multiple_choice",
+            "ref": "cca1472b-9ca4-4bff-a558-bd4f018d7804"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "z3UXDbCLfm5i",
+            "ref": "643deb38-e087-409b-ad0b-e6bbc7df168a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "FTRD9dOxN3mo",
+            "type": "multiple_choice",
+            "ref": "1a941af5-7d6a-4e1e-b703-20706df46ceb"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "kkoaLoxZ8JDs",
+            "ref": "5d12b613-60bb-4c36-9808-7a6ff957a787",
+            "label": "Sometimes"
+          }
+        },
+        {
+          "field": {
+            "id": "AVFSIF2CXDZa",
+            "type": "multiple_choice",
+            "ref": "6879bb09-f08b-4670-9c0c-b2b02a1b8fe4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "5lQIjLGsuYUb",
+            "ref": "68667cde-c730-44c7-a5eb-512358fc46d7",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "QSBTq2yAtU4W",
+            "type": "multiple_choice",
+            "ref": "6c4eebc5-eced-4853-b4f0-6477919b4fdd"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "zMWGnJtOcW2m",
+            "ref": "4e571012-64f9-4cd5-97b6-021958b57a28",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "9HVm7wj1HltY",
+            "type": "multiple_choice",
+            "ref": "d83d22ff-3ff3-4143-b89a-a91dc2869564"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "PoldANVC2F7P",
+            "ref": "29f4055b-b7bb-4433-8332-522d347384f7",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "CXZPljF859fO",
+            "type": "multiple_choice",
+            "ref": "1f3dc040-41f0-4a32-b083-934702dd9610"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "2AVd6c4D7CwN",
+            "ref": "0b8c4bfb-650f-4356-8771-4584fa3eadc6",
+            "label": "Sometimes"
+          }
+        },
+        {
+          "field": {
+            "id": "1O9Su1trrb0L",
+            "type": "multiple_choice",
+            "ref": "7e0ba05d-f8fb-4806-9f7b-96c6535d2db9"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "McokLdGvuKLK",
+            "ref": "147b15eb-6a42-4db9-8f1a-2b9aa10d6553",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "jNYC6Rw38AKA",
+            "type": "multiple_choice",
+            "ref": "54170b42-79db-4a1d-ae11-24d82b7cf35a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "oM5O2nn5Mo00",
+            "ref": "dd04a2db-d389-43f4-ac74-f814b8781282",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "mSejq2GGpOv4",
+            "type": "multiple_choice",
+            "ref": "078e6db6-5b18-4d1e-96a4-d99a4ccefde2"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "c3yA7EOSYq3s",
+            "ref": "a38d5101-593c-4dbe-a822-0a297408c895",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "3Cwwfy21UsDs",
+            "type": "multiple_choice",
+            "ref": "4f32a7fa-5641-4a33-b04e-c356eef8559a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "YXwKIA0bLSqa",
+            "ref": "0f4499ad-21b5-4ac8-b9d8-3030636e59cc",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "qMyGjY1cBM2t",
+            "type": "multiple_choice",
+            "ref": "e4f0adc4-4492-43eb-a3aa-726c8edc644e"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "pVzQ1UUaDNgc",
+            "ref": "80019e49-7409-4bd7-b005-7889b7cb673f",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "rhcV1Qj2rnHI",
+            "type": "multiple_choice",
+            "ref": "58db040a-c13a-4d5e-a90c-d36041322ae4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "4K4ylW3bGjhD",
+            "ref": "e4121d46-18ec-4bab-939d-a938d76f1d64",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "4Rrmiskhqwlh",
+            "type": "multiple_choice",
+            "ref": "dda10671-0340-4d81-9505-e0e86088b392"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "Rg21gb3IulOu",
+            "ref": "3056b7eb-ed42-4d37-b41e-cac23a3d444d",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "oLKPOHQz5g8g",
+            "type": "multiple_choice",
+            "ref": "80e96276-ef42-4200-8d7c-03df73b0dc94"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "MNkJxw4vBxk0",
+            "ref": "646acbf5-f875-4574-8789-f04c6705a275",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "Pk2EtM4KSUTN",
+            "type": "multiple_choice",
+            "ref": "dbabd894-d787-4f21-8758-cfc43b823c43"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "ixDrlCrVdbsV",
+            "ref": "4ad3c34c-bdbf-458f-b284-bfe58b0bd11a",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "qX53cxfq8OZb",
+            "type": "multiple_choice",
+            "ref": "cf94bfaa-2d3c-4f41-8a34-8266ec20cdb4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "B1APdV1AQa1H",
+            "ref": "dbab3328-6e8e-4574-8d66-9de6bd8a7162",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "Gp1IJ24N0My2",
+            "type": "multiple_choice",
+            "ref": "6632f045-599b-4949-a942-79b8439b5c90"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "FZquaYiOmBCc",
+            "ref": "a13d7d6a-6176-4f78-9eb8-ed5aac4eb9cf",
+            "label": "Sometimes"
+          }
+        },
+        {
+          "field": {
+            "id": "A4VQvLTVYypm",
+            "type": "multiple_choice",
+            "ref": "d698dfe5-836e-4b55-838a-7b8d92d2f9d4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "mIGRH6crk9Sa",
+            "ref": "205ce656-9777-402a-8ef6-c7048927dfa7",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "5qmMpWs4czRn",
+            "type": "multiple_choice",
+            "ref": "380a4f52-89fd-4c78-a236-68a23fed5cfe"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "Axm4GkGleZuY",
+            "ref": "049a45a9-7a66-478c-a2c6-8c2967ac0f73",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "AiAL9X6vb8zA",
+            "type": "multiple_choice",
+            "ref": "1e73962b-74b5-49af-8fd6-8d2cabd7c576"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "smXg8Bi4ttcb",
+            "ref": "386ffacd-026a-463a-bde5-098494b57437",
+            "label": "Sometimes"
+          }
+        },
+        {
+          "field": {
+            "id": "NFCN1Uk81bpz",
+            "type": "multiple_choice",
+            "ref": "6b1e6252-74c6-4504-8eec-c67abcea7d61"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "XLR4Kx4glCDx",
+            "ref": "a66e6821-7afb-4533-862e-6a3a5c34509f",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "fkuEAYI0tHgz",
+            "type": "multiple_choice",
+            "ref": "4a5def18-ad5e-46f1-8d88-4cd47cbbb78d"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "2Sg0dmM6imxH",
+            "ref": "198a8a68-2704-4166-942b-6c84f1526bbb",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "KANhTj1rLrNU",
+            "type": "multiple_choice",
+            "ref": "08138b95-d5f5-43e1-9454-7bfd3b2b2aba"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "jOC9TZlsE056",
+            "ref": "6286c68d-065f-4d40-b37b-ec8eb8bd7887",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "pAgPfdc9STQp",
+            "type": "long_text",
+            "ref": "544b53cc-80f3-4902-b426-4a5c66ab7141"
+          },
+          "type": "text",
+          "text": "Vision, Immense relevant experience, Balanced communication"
+        },
+        {
+          "field": {
+            "id": "4qAMC0O8sODl",
+            "type": "long_text",
+            "ref": "500bc744-e94f-4ef2-b7df-54506c143790"
+          },
+          "type": "text",
+          "text": "NA"
+        }
+      ]
+    },
+    {
+      "landing_id": "kw8rzx18jeepcc6rkw8rz4vbv1nx2thx",
+      "token": "kw8rzx18jeepcc6rkw8rz4vbv1nx2thx",
+      "response_id": "kw8rzx18jeepcc6rkw8rz4vbv1nx2thx",
+      "response_type": "completed",
+      "landed_at": "2024-06-20T01:41:03Z",
+      "submitted_at": "2024-06-20T01:46:10Z",
+      "metadata": {
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
+        "platform": "other",
+        "referer": "https://form.typeform.com/to/f9grXrMz",
+        "network_id": "908cd0d3ab",
+        "browser": "default"
+      },
+      "hidden": {},
+      "calculated": {
+        "score": 0
+      },
+      "answers": [
+        {
+          "field": {
+            "id": "k375htR8NdmB",
+            "type": "short_text",
+            "ref": "01HWX0FPD2MGR0R7WG7BHF0HG1"
+          },
+          "type": "text",
+          "text": "Shahin Bonakdar"
+        },
+        {
+          "field": {
+            "id": "o6juWSUYIUg0",
+            "type": "multiple_choice",
+            "ref": "be8fbb25-1cd4-463d-b4e8-97bf0cdac88f"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "bpx561OVjyxv",
+            "ref": "aab9a1c0-e58a-49ec-9444-e1c804d7f573",
+            "label": "I am his/her Stakeholder"
+          }
+        },
+        {
+          "field": {
+            "id": "BbGYAqop1kT7",
+            "type": "multiple_choice",
+            "ref": "f9e65013-788b-4515-838f-79ee2552b933"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "xK5IqdTJO6ol",
+            "ref": "69a4526a-0c0c-433f-8926-b53907e8700a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "xRNoTybArDFY",
+            "type": "multiple_choice",
+            "ref": "cca1472b-9ca4-4bff-a558-bd4f018d7804"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "z3UXDbCLfm5i",
+            "ref": "643deb38-e087-409b-ad0b-e6bbc7df168a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "FTRD9dOxN3mo",
+            "type": "multiple_choice",
+            "ref": "1a941af5-7d6a-4e1e-b703-20706df46ceb"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "mGZA8H7iFUWY",
+            "ref": "126815de-454f-4edb-a30f-51f37b7bf473",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "AVFSIF2CXDZa",
+            "type": "multiple_choice",
+            "ref": "6879bb09-f08b-4670-9c0c-b2b02a1b8fe4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "YFWA2qoOaSA4",
+            "ref": "ef3a095e-d1d2-4429-aea6-324d4982124c",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "QSBTq2yAtU4W",
+            "type": "multiple_choice",
+            "ref": "6c4eebc5-eced-4853-b4f0-6477919b4fdd"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "grv2Y1kEkdPt",
+            "ref": "0a0df31d-b03f-47a3-853a-1249c9763b13",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "9HVm7wj1HltY",
+            "type": "multiple_choice",
+            "ref": "d83d22ff-3ff3-4143-b89a-a91dc2869564"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "4qCUB8PYbm7a",
+            "ref": "1cc1df8f-3088-413f-a4e5-9a0eec7126c8",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "CXZPljF859fO",
+            "type": "multiple_choice",
+            "ref": "1f3dc040-41f0-4a32-b083-934702dd9610"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "LAChvp3KHvuZ",
+            "ref": "38a81f7e-c448-4538-bebb-665de93f9b8b",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "1O9Su1trrb0L",
+            "type": "multiple_choice",
+            "ref": "7e0ba05d-f8fb-4806-9f7b-96c6535d2db9"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "McokLdGvuKLK",
+            "ref": "147b15eb-6a42-4db9-8f1a-2b9aa10d6553",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "jNYC6Rw38AKA",
+            "type": "multiple_choice",
+            "ref": "54170b42-79db-4a1d-ae11-24d82b7cf35a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "oM5O2nn5Mo00",
+            "ref": "dd04a2db-d389-43f4-ac74-f814b8781282",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "mSejq2GGpOv4",
+            "type": "multiple_choice",
+            "ref": "078e6db6-5b18-4d1e-96a4-d99a4ccefde2"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "0f0p1Qvu9SkA",
+            "ref": "04dff62b-91ac-46c5-a4c1-b3109da1db03",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "3Cwwfy21UsDs",
+            "type": "multiple_choice",
+            "ref": "4f32a7fa-5641-4a33-b04e-c356eef8559a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "1z9GZVnx1ePk",
+            "ref": "c15d636f-cc14-477c-881b-b338cd9237d7",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "qMyGjY1cBM2t",
+            "type": "multiple_choice",
+            "ref": "e4f0adc4-4492-43eb-a3aa-726c8edc644e"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "5iDR4cUTV6fb",
+            "ref": "447018d7-8982-457a-8172-67b645a7b35c",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "rhcV1Qj2rnHI",
+            "type": "multiple_choice",
+            "ref": "58db040a-c13a-4d5e-a90c-d36041322ae4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "2Mnd4USkof2C",
+            "ref": "6c88441d-48a8-4213-b228-9b2160734edf",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "4Rrmiskhqwlh",
+            "type": "multiple_choice",
+            "ref": "dda10671-0340-4d81-9505-e0e86088b392"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "Wz0lvyLxWNfD",
+            "ref": "e7cd5c04-55ab-466f-8893-bf5475384ff8",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "oLKPOHQz5g8g",
+            "type": "multiple_choice",
+            "ref": "80e96276-ef42-4200-8d7c-03df73b0dc94"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "Y04aywAuI2jp",
+            "ref": "6c6d9e95-94c0-4436-a709-af6be3977b30",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "Pk2EtM4KSUTN",
+            "type": "multiple_choice",
+            "ref": "dbabd894-d787-4f21-8758-cfc43b823c43"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "U7aE64LMW9wW",
+            "ref": "bcbeee4f-e91b-4c6d-a014-56d96ee20151",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "qX53cxfq8OZb",
+            "type": "multiple_choice",
+            "ref": "cf94bfaa-2d3c-4f41-8a34-8266ec20cdb4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "qbLzNCpGY60N",
+            "ref": "91f4b5d5-fd7f-497c-9aea-27907a546e51",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "Gp1IJ24N0My2",
+            "type": "multiple_choice",
+            "ref": "6632f045-599b-4949-a942-79b8439b5c90"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "og0cay65ljbf",
+            "ref": "f98d294d-977a-4bd6-ab77-4e5e32777d3e",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "A4VQvLTVYypm",
+            "type": "multiple_choice",
+            "ref": "d698dfe5-836e-4b55-838a-7b8d92d2f9d4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "WI4Hyczw2CYt",
+            "ref": "1178b78e-a73d-4fc8-9430-7ab6eee66e74",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "5qmMpWs4czRn",
+            "type": "multiple_choice",
+            "ref": "380a4f52-89fd-4c78-a236-68a23fed5cfe"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "Axm4GkGleZuY",
+            "ref": "049a45a9-7a66-478c-a2c6-8c2967ac0f73",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "AiAL9X6vb8zA",
+            "type": "multiple_choice",
+            "ref": "1e73962b-74b5-49af-8fd6-8d2cabd7c576"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "wSHZRdI1cQ4N",
+            "ref": "52dfb9a3-74cc-4995-8a0b-cd719f1be254",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "NFCN1Uk81bpz",
+            "type": "multiple_choice",
+            "ref": "6b1e6252-74c6-4504-8eec-c67abcea7d61"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "0JE9jAZWgFjK",
+            "ref": "396bb5f6-c97b-46a4-92f2-0757c9a59676",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "fkuEAYI0tHgz",
+            "type": "multiple_choice",
+            "ref": "4a5def18-ad5e-46f1-8d88-4cd47cbbb78d"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "i7wLsGfcDukE",
+            "ref": "97ae03ff-9514-464e-b87b-99c984955ad2",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "KANhTj1rLrNU",
+            "type": "multiple_choice",
+            "ref": "08138b95-d5f5-43e1-9454-7bfd3b2b2aba"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "ROLkV7nC9pqE",
+            "ref": "933bd8e8-c6da-45ec-a091-48106d2444cb",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "pAgPfdc9STQp",
+            "type": "long_text",
+            "ref": "544b53cc-80f3-4902-b426-4a5c66ab7141"
+          },
+          "type": "text",
+          "text": "Andres is always ready to step in and help."
+        },
+        {
+          "field": {
+            "id": "4qAMC0O8sODl",
+            "type": "long_text",
+            "ref": "500bc744-e94f-4ef2-b7df-54506c143790"
+          },
+          "type": "text",
+          "text": "I would like to work more with Andres to better understand his vision."
+        }
+      ]
+    },
+    {
+      "landing_id": "f2qkkzmzeelugoqqf5cjnxf2qkkmdbqu",
+      "token": "f2qkkzmzeelugoqqf5cjnxf2qkkmdbqu",
+      "response_id": "f2qkkzmzeelugoqqf5cjnxf2qkkmdbqu",
+      "response_type": "completed",
+      "landed_at": "2024-06-19T23:20:50Z",
+      "submitted_at": "2024-06-19T23:24:33Z",
+      "metadata": {
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+        "platform": "other",
+        "referer": "https://form.typeform.com/to/f9grXrMz",
+        "network_id": "bda602533d",
+        "browser": "default"
+      },
+      "hidden": {},
+      "calculated": {
+        "score": 0
+      },
+      "answers": [
+        {
+          "field": {
+            "id": "k375htR8NdmB",
+            "type": "short_text",
+            "ref": "01HWX0FPD2MGR0R7WG7BHF0HG1"
+          },
+          "type": "text",
+          "text": "Catherine Caragan"
+        },
+        {
+          "field": {
+            "id": "o6juWSUYIUg0",
+            "type": "multiple_choice",
+            "ref": "be8fbb25-1cd4-463d-b4e8-97bf0cdac88f"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "bpx561OVjyxv",
+            "ref": "aab9a1c0-e58a-49ec-9444-e1c804d7f573",
+            "label": "I am his/her Stakeholder"
+          }
+        },
+        {
+          "field": {
+            "id": "BbGYAqop1kT7",
+            "type": "multiple_choice",
+            "ref": "f9e65013-788b-4515-838f-79ee2552b933"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "xK5IqdTJO6ol",
+            "ref": "69a4526a-0c0c-433f-8926-b53907e8700a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "xRNoTybArDFY",
+            "type": "multiple_choice",
+            "ref": "cca1472b-9ca4-4bff-a558-bd4f018d7804"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "z3UXDbCLfm5i",
+            "ref": "643deb38-e087-409b-ad0b-e6bbc7df168a",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "FTRD9dOxN3mo",
+            "type": "multiple_choice",
+            "ref": "1a941af5-7d6a-4e1e-b703-20706df46ceb"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "mGZA8H7iFUWY",
+            "ref": "126815de-454f-4edb-a30f-51f37b7bf473",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "AVFSIF2CXDZa",
+            "type": "multiple_choice",
+            "ref": "6879bb09-f08b-4670-9c0c-b2b02a1b8fe4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "YFWA2qoOaSA4",
+            "ref": "ef3a095e-d1d2-4429-aea6-324d4982124c",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "QSBTq2yAtU4W",
+            "type": "multiple_choice",
+            "ref": "6c4eebc5-eced-4853-b4f0-6477919b4fdd"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "grv2Y1kEkdPt",
+            "ref": "0a0df31d-b03f-47a3-853a-1249c9763b13",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "9HVm7wj1HltY",
+            "type": "multiple_choice",
+            "ref": "d83d22ff-3ff3-4143-b89a-a91dc2869564"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "4qCUB8PYbm7a",
+            "ref": "1cc1df8f-3088-413f-a4e5-9a0eec7126c8",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "CXZPljF859fO",
+            "type": "multiple_choice",
+            "ref": "1f3dc040-41f0-4a32-b083-934702dd9610"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "hNq0kuiwAVM7",
+            "ref": "4a9a2859-75cd-459d-a05a-42b6adc83093",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "1O9Su1trrb0L",
+            "type": "multiple_choice",
+            "ref": "7e0ba05d-f8fb-4806-9f7b-96c6535d2db9"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "4RpiPuyyRsaL",
+            "ref": "c693801e-81cc-4eba-ac39-9cf26c3869bf",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "jNYC6Rw38AKA",
+            "type": "multiple_choice",
+            "ref": "54170b42-79db-4a1d-ae11-24d82b7cf35a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "OYGUHMaq6n8D",
+            "ref": "bcde5548-7f47-46f0-8c50-6462430bf258",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "mSejq2GGpOv4",
+            "type": "multiple_choice",
+            "ref": "078e6db6-5b18-4d1e-96a4-d99a4ccefde2"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "0f0p1Qvu9SkA",
+            "ref": "04dff62b-91ac-46c5-a4c1-b3109da1db03",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "3Cwwfy21UsDs",
+            "type": "multiple_choice",
+            "ref": "4f32a7fa-5641-4a33-b04e-c356eef8559a"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "1z9GZVnx1ePk",
+            "ref": "c15d636f-cc14-477c-881b-b338cd9237d7",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "qMyGjY1cBM2t",
+            "type": "multiple_choice",
+            "ref": "e4f0adc4-4492-43eb-a3aa-726c8edc644e"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "5iDR4cUTV6fb",
+            "ref": "447018d7-8982-457a-8172-67b645a7b35c",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "rhcV1Qj2rnHI",
+            "type": "multiple_choice",
+            "ref": "58db040a-c13a-4d5e-a90c-d36041322ae4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "2Mnd4USkof2C",
+            "ref": "6c88441d-48a8-4213-b228-9b2160734edf",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "4Rrmiskhqwlh",
+            "type": "multiple_choice",
+            "ref": "dda10671-0340-4d81-9505-e0e86088b392"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "GYJQuzfAf4q4",
+            "ref": "2d8fe6ff-69e9-48f3-ad9d-528e6dc9fc66",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "oLKPOHQz5g8g",
+            "type": "multiple_choice",
+            "ref": "80e96276-ef42-4200-8d7c-03df73b0dc94"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "4m6WtS5SOQNY",
+            "ref": "d6ba5d8b-dbb5-4ee4-8e08-c438d4441012",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "Pk2EtM4KSUTN",
+            "type": "multiple_choice",
+            "ref": "dbabd894-d787-4f21-8758-cfc43b823c43"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "U7aE64LMW9wW",
+            "ref": "bcbeee4f-e91b-4c6d-a014-56d96ee20151",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "qX53cxfq8OZb",
+            "type": "multiple_choice",
+            "ref": "cf94bfaa-2d3c-4f41-8a34-8266ec20cdb4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "qbLzNCpGY60N",
+            "ref": "91f4b5d5-fd7f-497c-9aea-27907a546e51",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "Gp1IJ24N0My2",
+            "type": "multiple_choice",
+            "ref": "6632f045-599b-4949-a942-79b8439b5c90"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "og0cay65ljbf",
+            "ref": "f98d294d-977a-4bd6-ab77-4e5e32777d3e",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "A4VQvLTVYypm",
+            "type": "multiple_choice",
+            "ref": "d698dfe5-836e-4b55-838a-7b8d92d2f9d4"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "WI4Hyczw2CYt",
+            "ref": "1178b78e-a73d-4fc8-9430-7ab6eee66e74",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "5qmMpWs4czRn",
+            "type": "multiple_choice",
+            "ref": "380a4f52-89fd-4c78-a236-68a23fed5cfe"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "ZSoawnYOU7Gl",
+            "ref": "fe5c0bb6-e416-4a93-b075-46ad1d9104c5",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "AiAL9X6vb8zA",
+            "type": "multiple_choice",
+            "ref": "1e73962b-74b5-49af-8fd6-8d2cabd7c576"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "n6214cD2tYg2",
+            "ref": "9cbd4fa2-590f-46fe-9e89-9d1ba33254a4",
+            "label": "Frequently"
+          }
+        },
+        {
+          "field": {
+            "id": "NFCN1Uk81bpz",
+            "type": "multiple_choice",
+            "ref": "6b1e6252-74c6-4504-8eec-c67abcea7d61"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "TsbBZHKC1097",
+            "ref": "52b839ec-4e0f-475d-baba-092d1b85d229",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "fkuEAYI0tHgz",
+            "type": "multiple_choice",
+            "ref": "4a5def18-ad5e-46f1-8d88-4cd47cbbb78d"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "2Sg0dmM6imxH",
+            "ref": "198a8a68-2704-4166-942b-6c84f1526bbb",
+            "label": "N/A"
+          }
+        },
+        {
+          "field": {
+            "id": "KANhTj1rLrNU",
+            "type": "multiple_choice",
+            "ref": "08138b95-d5f5-43e1-9454-7bfd3b2b2aba"
+          },
+          "type": "choice",
+          "choice": {
+            "id": "ROLkV7nC9pqE",
+            "ref": "933bd8e8-c6da-45ec-a091-48106d2444cb",
+            "label": "Always"
+          }
+        },
+        {
+          "field": {
+            "id": "pAgPfdc9STQp",
+            "type": "long_text",
+            "ref": "544b53cc-80f3-4902-b426-4a5c66ab7141"
+          },
+          "type": "text",
+          "text": "Willing to try new strategies that do not already exist today in the bank in order to accommodate needs of stakeholders"
+        },
+        {
+          "field": {
+            "id": "4qAMC0O8sODl",
+            "type": "long_text",
+            "ref": "500bc744-e94f-4ef2-b7df-54506c143790"
+          },
+          "type": "text",
+          "text": "n/a"
+        }
+      ]
+    }
+  ],
+  "total_items": 3,
+  "page_count": 1
+}
