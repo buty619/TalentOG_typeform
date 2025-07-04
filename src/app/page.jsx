@@ -45,7 +45,9 @@ export default function Home() {
       )
     );
 
-    const csv = unparse(processData);
+    const csv = unparse(processData, {
+      delimiter: ';'
+    });
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
 
