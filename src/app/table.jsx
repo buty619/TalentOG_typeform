@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ResponsesTable = ({ data }) => {
-  console.log('data', data);
   return (
     <table
       border="1"
