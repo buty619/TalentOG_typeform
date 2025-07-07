@@ -116,7 +116,7 @@ export default function Home() {
       </main>
       <footer className="py-4 row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <p className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-weight-700 text-xs text-gray-300">
-          CB-2025 ©
+          CFBR-2025 ©
         </p>
       </footer>
     </div>
