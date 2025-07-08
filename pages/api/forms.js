@@ -61,9 +61,9 @@ async function fetchAllResponses(req, res) {
   const { workspaceId } = req.query;
   const { items, error } = await getWorkspaces(workspaceId);
   if (error) {
-    console.log('error', error);
-    res.status(500).json({
-      error: `[GET_ALL_RESPONSES]: ERROR - ${error}`,
+    console.log(`[GET_ALL_RESPONSES]: ERROR - ${error}`);
+    res.status(400).json({
+      error,
     });
     return;
   }
@@ -73,7 +73,7 @@ async function fetchAllResponses(req, res) {
         const data = await getForms(item.id, item.title);
 
         if (res.length) {
-          res.status(500).json({ error: 'Internal proxy error' });
+          res.status(400).json({ error: 'Internal proxy error' });
         }
 
         return { ...data, title: item.title };
@@ -91,7 +91,7 @@ async function fetchAllResponses(req, res) {
     res.status(200).json(processData);
   } catch (error) {
     console.log(`[GET_ALL_RESPONSES]: ERROR - `, error);
-    res.status(500).json({ error: `[GET_ALL_RESPONSES]: ERROR - ${error}` });
+    res.status(400).json({ error });
   }
 }
 

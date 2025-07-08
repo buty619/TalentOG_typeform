@@ -12,24 +12,35 @@ export default function Home() {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!inputValue) {
       setData({
-        error: '[GET_ALL_RESPONSES]: ERROR - add a valid workspace ID',
+        error: 'ADD_VALID_WORKSPACE_ID',
       });
     } else {
       setData([]);
       setInputValue('');
+
       const workSpacesID = inputValue
         .split(',')
         .map((id) => id.trim())
         .filter((id) => id.length);
 
-      workSpacesID.map((inputValue) => {
-        fetch(`/api/forms?workspaceId=${inputValue}`)
-          .then((res) => res.json())
-          .then((res) => setData((data) => [...data, ...res]));
-      });
+      const workSpacesData = await Promise.all(
+        workSpacesID.map(async (inputValue) => {
+          const response = await fetch(`/api/forms?workspaceId=${inputValue}`);
+          return await response.json();
+        })
+      );
+
+      const error = workSpacesData.find(({ error }) => error);
+
+      if (error) {
+        setData(error);
+        return;
+      }
+
+      setData((data) => [...data, ...workSpacesData.flat()]);
     }
   };
 
