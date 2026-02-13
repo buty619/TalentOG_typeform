@@ -7,6 +7,7 @@ import { unparse } from 'papaparse';
 export default function Home() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [showDetail, setShowDetail] = useState(false);
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -72,9 +73,9 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col p-10 h-screen w-screen">
-      <main className="flex flex-col grow gap-[14px] md:gap-[32px] row-start-2 items-center sm:items-start h-full w-full">
-        <div className="flex justify-center items-center md:items-baseline gap-[30px]">
+    <div className="flex flex-col p-6 md:p-10 min-h-screen w-screen items-center">
+      <main className="flex flex-col grow gap-4 md:gap-8 items-center w-full max-w-5xl">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Image
             className="dark:invert"
             src="/Talent-Logo.png"
@@ -83,11 +84,11 @@ export default function Home() {
             height={38}
             priority
           />
-          <h1 className="sm:text-1xl md:text-2xl font-semibold text-gray-800 mb-4 border-b border-gray-300 pb-2">
+          <h1 className="text-xl md:text-2xl font-semibold text-gray-800 border-b border-gray-300 pb-2 text-center">
             Talent Group TypeForm Information Process
           </h1>
         </div>
-        <div className="flex flex-wrap justify-center items-baseline gap-[10px]">
+        <div className="flex flex-wrap justify-center items-center gap-3">
           <input
             type="text"
             name="workspaceID"
@@ -95,7 +96,7 @@ export default function Home() {
             placeholder="workspace ID"
             value={inputValue}
             onChange={handleInputChange}
-            className="max-w-[250px] px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
+            className="w-[250px] px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200"
           />
           <button
             onClick={handleSubmit}
@@ -112,21 +113,62 @@ export default function Home() {
             </button>
           )}
         </div>
-        <p className="text-xs text-gray-500">
+        <p className="text-xs text-gray-500 text-center max-w-lg">
           Para agregar varios workspaces colocar su ID separado por una coma,
           ej: NhY5t2, vnvDcM. Asegurarse que todos los cuestionarios de cada
-          worspace tengan la misma cantidad de preguntas.
+          workspace tengan la misma cantidad de preguntas.
         </p>
 
         {!!data?.length && (
-          <div className="w-full overflow-scroll border border-black rounded-lg shadow-sm">
+          <div className="w-full border border-gray-300 rounded-lg shadow-sm p-4 bg-gray-50">
+            <button
+              onClick={() => setShowDetail(!showDetail)}
+              className="w-full flex items-center justify-between cursor-pointer"
+            >
+              <h2 className="text-lg font-semibold text-gray-800">
+                Total de respuestas: <span className="text-blue-600">{data.length}</span>
+              </h2>
+              <span
+                className={`text-gray-500 text-xl transition-transform duration-200 ${showDetail ? 'rotate-180' : ''}`}
+              >
+                &#x25B2;
+              </span>
+            </button>
+            {showDetail && (
+              <table className="w-full border-collapse mt-3">
+                <thead>
+                  <tr>
+                    <th className="border border-gray-300 px-3 py-2 text-left bg-gray-100">Formulario</th>
+                    <th className="border border-gray-300 px-3 py-2 text-right bg-gray-100 w-[120px]">Respuestas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {Object.entries(
+                    data.reduce((acc, item) => {
+                      acc[item.title] = (acc[item.title] || 0) + 1;
+                      return acc;
+                    }, {})
+                  ).map(([title, count]) => (
+                    <tr key={title}>
+                      <td className="border border-gray-300 px-3 py-2">{title}</td>
+                      <td className="border border-gray-300 px-3 py-2 text-right">{count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        )}
+
+        {!!data?.length && (
+          <div className="w-full overflow-auto border border-gray-300 rounded-lg shadow-sm">
             <Table data={data} />
           </div>
         )}
         {!!data?.error && <h1>{data.error}</h1>}
       </main>
-      <footer className="py-4 row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <p className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-weight-700 text-xs text-gray-300">
+      <footer className="py-4 flex gap-6 flex-wrap items-center justify-center">
+        <p className="text-xs text-gray-300">
           CFBR-2025 ©
         </p>
       </footer>
