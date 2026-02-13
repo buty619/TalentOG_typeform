@@ -3,7 +3,7 @@ const apiUrl = process.env.API_URL;
 
 async function getWorkspaces(workspace) {
   console.log('[GET_WORKSPACE]: START - ', workspace);
-  const targetUrl = `${apiUrl}/workspaces/${workspace}/forms?page_size=100`; // cambia a tu API real
+  const targetUrl = `${apiUrl}/workspaces/${workspace}/forms?page_size=200`; // cambia a tu API real
 
   try {
     const response = await fetch(targetUrl, {
@@ -21,7 +21,7 @@ async function getWorkspaces(workspace) {
       return { error: data.code };
     }
     console.log(
-      `[GET_WORKSPACE]: SUCCESS - ${workspace}: items  on workspace ${data?.items?.length}`
+      `[GET_WORKSPACE]: SUCCESS - ${workspace}: items  on workspace ${data?.items?.length}`,
     );
     return data;
   } catch (error) {
@@ -37,7 +37,7 @@ async function getForms(formId, title) {
     console.error('[GET_FORMS]: ERROR - Missing formId parameter');
     return [];
   }
-  const targetUrl = `${apiUrl}/forms/${formId}/responses`;
+  const targetUrl = `${apiUrl}/forms/${formId}/responses?page_size=1000`;
 
   try {
     const response = await fetch(targetUrl, {
@@ -49,7 +49,10 @@ async function getForms(formId, title) {
     });
 
     const data = await response.json();
-    console.log(`[GET_FORMS]: SUCCESS - ${formId}: ${title}`);
+
+    console.log(
+      `[GET_FORMS]: SUCCESS - ${formId}: ${title}, Total Responses: ${data.items.length}`,
+    );
     return data;
   } catch (error) {
     console.error(`[GET_FORMS]: ERROR - ${formId}: ${title}`, error);
@@ -77,7 +80,7 @@ async function fetchAllResponses(req, res) {
         }
 
         return { ...data, title: item.title };
-      })
+      }),
     );
 
     const processData = responses.reduce(
@@ -85,7 +88,7 @@ async function fetchAllResponses(req, res) {
         ...acc,
         ...d.items.map((item) => ({ ...item, title: d.title })),
       ],
-      []
+      [],
     );
     console.log(`[GET_ALL_RESPONSES]: SUCCESS - `, processData.length);
     res.status(200).json(processData);
