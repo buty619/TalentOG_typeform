@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <div className="flex flex-col p-6 md:p-10 min-h-screen w-screen items-center bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
       <main className="flex flex-col grow gap-4 md:gap-8 items-center w-full max-w-5xl">
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-3">
           <Image
             className="dark:invert"
             src="/Talent-Logo.png"
