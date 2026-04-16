@@ -12,7 +12,7 @@ const ResponsesTable = ({ data }) => {
               title={title}
               className="border border-gray-300 dark:border-gray-600 min-w-[180px] max-w-[300px] px-3 py-2 text-left text-xs font-semibold align-top sticky top-0 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 break-words"
             >
-              {title || `Pregunta ${index + 1}`}
+              {`${index + 1}. ${title || 'Pregunta'}`}
             </th>
           ))}
         </tr>
