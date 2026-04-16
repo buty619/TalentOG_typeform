@@ -106,13 +106,17 @@ async function fetchAllResponses(req, res) {
           const answerMap = new Map(
             responseItem.answers.map((a) => [a.field.id, a])
           );
-          const normalizedAnswers = fields.map((field) =>
-            answerMap.get(field.id) || {
+          const normalizedAnswers = fields.map((field) => {
+            const answer = answerMap.get(field.id) || {
               type: field.type,
               text: '—',
               field: { id: field.id, type: field.type, ref: field.ref },
-            }
-          );
+            };
+            return {
+              ...answer,
+              field: { ...answer.field, title: field.title },
+            };
+          });
           return { ...responseItem, answers: normalizedAnswers, title: item.title };
         });
 

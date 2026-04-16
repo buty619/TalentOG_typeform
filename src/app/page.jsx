@@ -61,8 +61,8 @@ export default function Home() {
       answers.reduce(
         (acc, item, index) => ({
           ...acc,
-          [`Pregunta ${index + 1}`]:
-            item.text || item.choice?.label || '[ERROR]',
+          [item.field?.title || `Pregunta ${index + 1}`]:
+            item.text || item.choice?.label || '—',
         }),
         { ['Formulario']: title }
       )
