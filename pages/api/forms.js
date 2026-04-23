@@ -47,41 +47,83 @@ async function getFormDefinition(formId) {
     console.log(
       `[GET_FORM_DEF]: SUCCESS - ${formId}: ${data.fields?.length} fields`,
     );
-    return data.fields || [];
+    return { fields: data.fields || [], title: data.title || formId };
   } catch (error) {
     console.error(`[GET_FORM_DEF]: ERROR - ${formId}`, error);
-    return [];
+    return { fields: [], title: formId };
   }
 }
 
-async function getForms(formId, title) {
-  console.log(`[GET_FORMS]: START - ${formId}: ${title}`);
+async function getForms(formId) {
+  console.log(`[GET_FORMS]: START - ${formId}`);
 
   if (!formId) {
     console.error('[GET_FORMS]: ERROR - Missing formId parameter');
-    return [];
+    return { items: [], total_items: 0 };
   }
-  const targetUrl = `${apiUrl}/forms/${formId}/responses?page_size=1000`;
 
-  try {
-    const response = await fetch(targetUrl, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-        'Content-Type': 'application/json',
-      },
-    });
+  const allItems = [];
+  let before = null;
 
-    const data = await response.json();
+  while (true) {
+    const url = before
+      ? `${apiUrl}/forms/${formId}/responses?page_size=1000&before=${before}`
+      : `${apiUrl}/forms/${formId}/responses?page_size=1000`;
 
-    console.log(
-      `[GET_FORMS]: SUCCESS - ${formId}: ${title}, Total Responses: ${data.items.length}`,
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+      if (data.code) {
+        console.error(`[GET_FORMS]: API ERROR - ${formId}: ${data.code}`);
+        break;
+      }
+
+      const page = data.items || [];
+      allItems.push(...page);
+
+      console.log(
+        `[GET_FORMS]: PAGE - ${formId}: fetched ${page.length}, total so far ${allItems.length}/${data.total_items}`,
+      );
+
+      if (page.length === 0 || allItems.length >= data.total_items) break;
+
+      before = page[page.length - 1].token;
+    } catch (error) {
+      console.error(`[GET_FORMS]: ERROR - ${formId}`, error);
+      break;
+    }
+  }
+
+  console.log(`[GET_FORMS]: DONE - ${formId}: ${allItems.length} total responses`);
+  return { items: allItems };
+}
+
+function normalizeResponses(items, fields, title) {
+  return items.map((responseItem) => {
+    const answerMap = new Map(
+      responseItem.answers.map((a) => [a.field.id, a]),
     );
-    return data;
-  } catch (error) {
-    console.error(`[GET_FORMS]: ERROR - ${formId}: ${title}`, error);
-    return [];
-  }
+    const normalizedAnswers = fields.map((field) => {
+      const answer = answerMap.get(field.id) || {
+        type: field.type,
+        text: '—',
+        field: { id: field.id, type: field.type, ref: field.ref },
+      };
+      return {
+        ...answer,
+        field: { ...answer.field, title: field.title },
+      };
+    });
+    return { ...responseItem, answers: normalizedAnswers, title };
+  });
 }
 
 async function fetchAllResponses(req, res) {
@@ -95,32 +137,11 @@ async function fetchAllResponses(req, res) {
   try {
     const responses = await Promise.all(
       items?.map(async (item) => {
-        const [data, fields] = await Promise.all([
-          getForms(item.id, item.title),
+        const [data, { fields }] = await Promise.all([
+          getForms(item.id),
           getFormDefinition(item.id),
         ]);
-
-        // Normalize: ensure every response has an answer for every field,
-        // in the same order as the form definition
-        const normalizedItems = (data.items || []).map((responseItem) => {
-          const answerMap = new Map(
-            responseItem.answers.map((a) => [a.field.id, a])
-          );
-          const normalizedAnswers = fields.map((field) => {
-            const answer = answerMap.get(field.id) || {
-              type: field.type,
-              text: '—',
-              field: { id: field.id, type: field.type, ref: field.ref },
-            };
-            return {
-              ...answer,
-              field: { ...answer.field, title: field.title },
-            };
-          });
-          return { ...responseItem, answers: normalizedAnswers, title: item.title };
-        });
-
-        return normalizedItems;
+        return normalizeResponses(data.items || [], fields, item.title);
       }),
     );
 
@@ -133,4 +154,32 @@ async function fetchAllResponses(req, res) {
   }
 }
 
-export default fetchAllResponses;
+async function fetchFormResponses(req, res) {
+  const { formId } = req.query;
+
+  if (!formId) {
+    res.status(400).json({ error: 'Missing formId parameter' });
+    return;
+  }
+
+  console.log(`[FETCH_FORM]: START - ${formId}`);
+
+  try {
+    const [data, { fields, title }] = await Promise.all([
+      getForms(formId),
+      getFormDefinition(formId),
+    ]);
+
+    const processData = normalizeResponses(data.items || [], fields, title);
+    console.log(`[FETCH_FORM]: SUCCESS - ${formId}: ${processData.length} responses`);
+    res.status(200).json(processData);
+  } catch (error) {
+    console.error(`[FETCH_FORM]: ERROR - ${formId}`, error);
+    res.status(400).json({ error: String(error) });
+  }
+}
+
+export default function handler(req, res) {
+  if (req.query.formId) return fetchFormResponses(req, res);
+  return fetchAllResponses(req, res);
+}

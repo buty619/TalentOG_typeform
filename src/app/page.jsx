@@ -7,15 +7,18 @@ import { unparse } from 'papaparse';
 export default function Home() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [mode, setMode] = useState('workspace');
   const [showDetail, setShowDetail] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const isFormMode = mode === 'form';
 
   const handleSubmit = async () => {
     if (loading) return;
 
     if (!inputValue.trim()) {
-      setError('Ingresa un ID de workspace válido');
+      setError(isFormMode ? 'Ingresa un ID de formulario válido' : 'Ingresa un ID de workspace válido');
       return;
     }
 
@@ -23,27 +26,27 @@ export default function Home() {
     setError(null);
     setLoading(true);
 
-    const workSpacesID = inputValue
+    const ids = inputValue
       .split(',')
       .map((id) => id.trim())
       .filter((id) => id.length);
 
     try {
-      const workSpacesData = await Promise.all(
-        workSpacesID.map(async (id) => {
-          const response = await fetch(`/api/forms?workspaceId=${id}`);
+      const results = await Promise.all(
+        ids.map(async (id) => {
+          const param = isFormMode ? `formId=${id}` : `workspaceId=${id}`;
+          const response = await fetch(`/api/forms?${param}`);
           return await response.json();
         })
       );
 
-      const apiError = workSpacesData.find(({ error }) => error);
-
+      const apiError = results.find((r) => r.error);
       if (apiError) {
         setError(apiError.error);
         return;
       }
 
-      setData(workSpacesData.flat());
+      setData(results.flat());
       setInputValue('');
     } catch {
       setError('Error al conectar con el servidor');
@@ -69,7 +72,7 @@ export default function Home() {
     );
 
     const csv = unparse(processData, { delimiter: ';' });
-    const BOM = '\uFEFF';
+    const BOM = '﻿';
     const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
 
@@ -98,12 +101,35 @@ export default function Home() {
           </h1>
         </div>
 
+        <div className="flex gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-xl">
+          <button
+            onClick={() => { setMode('workspace'); setData([]); setError(null); setInputValue(''); }}
+            className={`px-4 py-1.5 text-sm rounded-lg transition-all duration-200 ${
+              !isFormMode
+                ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm font-medium'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+            }`}
+          >
+            Workspace
+          </button>
+          <button
+            onClick={() => { setMode('form'); setData([]); setError(null); setInputValue(''); }}
+            className={`px-4 py-1.5 text-sm rounded-lg transition-all duration-200 ${
+              isFormMode
+                ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm font-medium'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+            }`}
+          >
+            Formulario
+          </button>
+        </div>
+
         <div className="flex flex-wrap justify-center items-center gap-3">
           <input
             type="text"
-            name="workspaceID"
-            id="workspaceID"
-            placeholder="ID del workspace"
+            name="queryId"
+            id="queryId"
+            placeholder={isFormMode ? 'ID del formulario' : 'ID del workspace'}
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -128,9 +154,9 @@ export default function Home() {
         </div>
 
         <p className="text-xs text-gray-500 dark:text-gray-400 text-center max-w-lg">
-          Para agregar varios workspaces colocar su ID separado por una coma,
-          ej: NhY5t2, vnvDcM. Asegurarse que todos los cuestionarios de cada
-          workspace tengan la misma cantidad de preguntas.
+          {isFormMode
+            ? 'Para agregar varios formularios colocar su ID separado por una coma, ej: abc123, def456.'
+            : 'Para agregar varios workspaces colocar su ID separado por una coma, ej: NhY5t2, vnvDcM. Asegurarse que todos los cuestionarios de cada workspace tengan la misma cantidad de preguntas.'}
         </p>
 
         {error && (
