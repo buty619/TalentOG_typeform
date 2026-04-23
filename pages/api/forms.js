@@ -1,33 +1,48 @@
 const authToken = process.env.AUTH_TOKEN;
 const apiUrl = process.env.API_URL;
 
-async function getWorkspaces(workspace) {
-  console.log('[GET_WORKSPACE]: START - ', workspace);
-  const targetUrl = `${apiUrl}/workspaces/${workspace}/forms?page_size=200`;
+async function getWorkspaceForms(workspaceId) {
+  console.log('[GET_WORKSPACE]: START - ', workspaceId);
+  const allForms = [];
+  let page = 1;
 
-  try {
-    const response = await fetch(targetUrl, {
-      method: 'GET',
-      headers: {
-        Authorization: `Bearer ${authToken}`,
-        'Content-Type': 'application/json',
-      },
-    });
+  while (true) {
+    const targetUrl = `${apiUrl}/workspaces/${workspaceId}/forms?page_size=200&page=${page}`;
 
-    const data = await response.json();
+    try {
+      const response = await fetch(targetUrl, {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+          'Content-Type': 'application/json',
+        },
+      });
 
-    if (data.code) {
-      console.error(`[GET_WORKSPACE]: ERROR - `, data.code);
-      return { error: data.code };
+      const data = await response.json();
+
+      if (data.code) {
+        console.error(`[GET_WORKSPACE]: ERROR - `, data.code);
+        return { error: data.code };
+      }
+
+      const items = data.items || [];
+      allForms.push(...items);
+
+      console.log(
+        `[GET_WORKSPACE]: PAGE ${page} - ${workspaceId}: fetched ${items.length}, total so far ${allForms.length}/${data.total_items}`,
+      );
+
+      if (allForms.length >= data.total_items || items.length === 0) break;
+
+      page++;
+    } catch (error) {
+      console.error(`[GET_WORKSPACE]: ERROR - `, error);
+      return { error };
     }
-    console.log(
-      `[GET_WORKSPACE]: SUCCESS - ${workspace}: items on workspace ${data?.items?.length}`,
-    );
-    return data;
-  } catch (error) {
-    console.error(`[GET_WORKSPACE]: ERROR - `, error);
-    return { error };
   }
+
+  console.log(`[GET_WORKSPACE]: DONE - ${workspaceId}: ${allForms.length} total forms`);
+  return { items: allForms };
 }
 
 async function getFormDefinition(formId) {
@@ -109,7 +124,7 @@ async function getForms(formId) {
 function normalizeResponses(items, fields, title) {
   return items.map((responseItem) => {
     const answerMap = new Map(
-      responseItem.answers.map((a) => [a.field.id, a]),
+      (responseItem.answers || []).map((a) => [a.field.id, a]),
     );
     const normalizedAnswers = fields.map((field) => {
       const answer = answerMap.get(field.id) || {
@@ -128,7 +143,7 @@ function normalizeResponses(items, fields, title) {
 
 async function fetchAllResponses(req, res) {
   const { workspaceId } = req.query;
-  const { items, error } = await getWorkspaces(workspaceId);
+  const { items, error } = await getWorkspaceForms(workspaceId);
   if (error) {
     console.log(`[GET_ALL_RESPONSES]: ERROR - ${error}`);
     res.status(400).json({ error });

@@ -31,7 +31,7 @@ src/app/
 | Variable     | Purpose                                  |
 |--------------|------------------------------------------|
 | `AUTH_TOKEN` | Typeform Personal Access Token (Bearer)  |
-| `API_URL`    | Typeform API base URL                    |
+| `API_URL`    | Typeform API base URL (`https://api.typeform.com`) |
 
 ## API Route: `GET /api/forms`
 
@@ -44,13 +44,28 @@ Two modes controlled by query param:
 
 Both params accept comma-separated IDs from the frontend (each becomes a separate `/api/forms` call).
 
-### Pagination
+## Typeform API Pagination — Critical Details
 
-`getForms` paginates via the `before` cursor (last item's `token` field) until `allItems.length >= total_items`. Max `page_size=1000` per request. This is critical — without it, forms with >1000 responses are silently truncated.
+**Two completely different pagination systems depending on endpoint:**
 
-### Response normalization
+### Workspace forms listing (`GET /workspaces/{id}/forms`)
+- **Offset-based** with `page` (integer) and `page_size` (max 200, default 10)
+- Response envelope: `{ total_items, page_count, items }`
+- To get all forms: increment `page` from 1 until `allForms.length >= total_items`
+- The code in `getWorkspaceForms` handles this loop
 
-Every response is normalized against the form's field definition so all rows have the same columns in the same order, with `'—'` for unanswered fields.
+### Form responses (`GET /forms/{id}/responses`)
+- **Cursor-based** with `before={token}` or `after={token}` — does NOT support a `page` integer
+- Max `page_size` is 1000 (default 25)
+- Default sort order: `submitted_at,desc` (newest first)
+- The `before` param is exclusive: returns responses submitted before the given token
+- To paginate: use `before = lastItem.token` at the end of each page
+- Cannot combine `before`/`after` with a custom `sort` parameter
+- Response envelope: `{ total_items, page_count, items }`
+- The code in `getForms` handles this loop
+
+### Why both need pagination
+A workspace can have >200 forms (missing forms = missing all their responses). Each form can have >1000 responses. Both loops are necessary; skipping either silently truncates data.
 
 ## UI Modes
 
@@ -62,6 +77,7 @@ Switching modes resets input, data, and error state.
 
 ## Known Constraints
 
-- The table header uses `data[0].answers` for column headers — all forms in a single query must have the same fields/order (enforced in workspace mode by design).
-- In form ID mode, mixing forms with different field sets will produce misaligned columns.
-- Typeform API rate limits are not handled — for very large workspaces, parallel `Promise.all` over many forms may hit rate limits.
+- The table header uses `data[0].answers` for column headers — all forms queried together must have the same fields in the same order.
+- In workspace mode this is enforced by design (same workspace). In form ID mode, mixing forms with different field sets will produce misaligned columns.
+- Typeform API rate limits are not handled — parallel `Promise.all` over many forms may hit limits for very large workspaces.
+- Responses with no `answers` (abandoned submissions) are safely handled by normalizing to an empty answer map (`(responseItem.answers || [])`) and filling all fields with `'—'`.
