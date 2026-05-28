@@ -60,18 +60,23 @@ export default function Home() {
   };
 
   const handleDownload = () => {
-    const processData = data.map(({ title, answers }) =>
-      answers.reduce(
-        (acc, item, index) => ({
-          ...acc,
-          [`${index + 1}. ${item.field?.title || 'Pregunta'}`]:
-            item.text || item.choice?.label || '—',
-        }),
-        { ['Formulario']: title }
-      )
+    const headers = data[0].answers.map(
+      (item, index) => `${index + 1}. ${item.field?.title || 'Pregunta'}`
     );
+    const columns = ['Formulario', ...headers];
 
-    const csv = unparse(processData, { delimiter: ';' });
+    const processData = data.map(({ title, answers }) => {
+      const row = { Formulario: title };
+      headers.forEach((key, index) => {
+        const answer = answers[index];
+        row[key] = answer
+          ? answer.text || answer.choice?.label || '—'
+          : '—';
+      });
+      return row;
+    });
+
+    const csv = unparse(processData, { delimiter: ';', columns });
     const BOM = '﻿';
     const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);
